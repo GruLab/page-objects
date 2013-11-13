@@ -7,7 +7,7 @@ class AuthenticationTest(unittest.TestCase):
     def setUp(self):
         self.driver = driver.connect()
 
-    def test_authentication(self):
+    def test_successful_authentication(self):
         login = LoginPage(self.driver)
         login.username = 'username'
         login.password = 'password'
