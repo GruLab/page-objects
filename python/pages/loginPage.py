@@ -1,6 +1,4 @@
 from basePage import BasePage
-from selenium.webdriver.support.ui import Select, WebDriverWait
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
 class LoginPage(BasePage):
 
@@ -13,15 +11,6 @@ class LoginPage(BasePage):
         self.driver = driver
         self.driver.get('http://the-internet.herokuapp.com/login')
         self.assertTrue(self.driver.find_element_by_css_selector(self.login_form))
-
-    def _element_present(self, locator):
-        try:
-            self.driver.find_element_by_css_selector(locator)
-        except NoSuchElementException, e: return False
-        return True
-
-    def _wait_for(self, locator):
-        WebDriverWait(self.driver, 5).until(lambda driver : self._element_present(locator))
 
     def submit(self):
         self.driver.find_element_by_css_selector(self.input_username).send_keys("username")
