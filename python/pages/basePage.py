@@ -4,9 +4,6 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
 class BasePage(unittest.TestCase):
 
-    def __init__(self, driver):
-        self.driver = driver
-
     def _element_present(self, locator):
         try:
             self.driver.find_element_by_css_selector(locator)
