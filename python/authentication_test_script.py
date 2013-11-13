@@ -12,7 +12,7 @@ class AuthenticationTest(unittest.TestCase):
         login.username = 'username'
         login.password = 'password'
         login.now()
-        self.assertTrue(self.driver.find_element_by_css_selector('#flash.success'))
+        self.assertTrue(login.success_message_present())
 
     def tearDown(self):
         driver.close()
