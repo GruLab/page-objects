@@ -13,7 +13,7 @@ class AuthenticationTest(unittest.TestCase):
         self.assertTrue(self.driver.find_element_by_css_selector('#flash.success'))
 
     def tearDown(self):
-        self.driver.close()
+        selenium_driver.close()
 
 if __name__ == "__main__":
     unittest.main()
