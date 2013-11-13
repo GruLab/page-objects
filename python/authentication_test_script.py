@@ -9,7 +9,7 @@ class AuthenticationTest(unittest.TestCase):
 
     def test_authentication(self):
         login = LoginPage(self.driver)
-        login.submit()
+        login.now()
         self.assertTrue(self.driver.find_element_by_css_selector('#flash.success'))
 
     def tearDown(self):
