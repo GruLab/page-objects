@@ -9,6 +9,8 @@ class AuthenticationTest(unittest.TestCase):
 
     def test_authentication(self):
         login = LoginPage(self.driver)
+        login.username = 'username'
+        login.password = 'password'
         login.now()
         self.assertTrue(self.driver.find_element_by_css_selector('#flash.success'))
 
