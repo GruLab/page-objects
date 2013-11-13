@@ -12,7 +12,7 @@ class LoginPage(BasePage):
 
     def __init__(self, driver):
         self.driver = driver
-        self._visit('http://the-internet.herokuapp.com/login')
+        self._visit('/login')
         self.assertTrue(self._find(self.login_form))
 
     def now(self):

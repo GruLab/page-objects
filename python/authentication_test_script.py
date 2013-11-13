@@ -1,11 +1,11 @@
 import unittest
 from pages.loginPage import LoginPage
-from config import selenium_driver
+from setup import driver
 
 class AuthenticationTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = selenium_driver.connect()
+        self.driver = driver.connect()
 
     def test_authentication(self):
         login = LoginPage(self.driver)
@@ -15,7 +15,7 @@ class AuthenticationTest(unittest.TestCase):
         self.assertTrue(self.driver.find_element_by_css_selector('#flash.success'))
 
     def tearDown(self):
-        selenium_driver.close()
+        driver.close()
 
 if __name__ == "__main__":
     unittest.main()

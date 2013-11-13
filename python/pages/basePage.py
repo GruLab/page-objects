@@ -1,6 +1,7 @@
 import unittest
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from setup.config import base_url
 
 class BasePage(unittest.TestCase):
 
@@ -22,5 +23,5 @@ class BasePage(unittest.TestCase):
     def _submit(self, locator):
         self._find(locator).submit()
 
-    def _visit(self, url):
-        self.driver.get(url)
+    def _visit(self, url_path):
+        self.driver.get(base_url + url_path)
