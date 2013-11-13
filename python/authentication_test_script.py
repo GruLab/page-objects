@@ -10,7 +10,7 @@ class AuthenticationTest(unittest.TestCase):
     def test_authentication(self):
         login = LoginPage(self.driver)
         login.submit()
-        self.assertIn("You logged into a secure area!", self.driver.find_element_by_css_selector('#flash').text)
+        self.assertTrue(self.driver.find_element_by_css_selector('#flash.success'))
 
     def tearDown(self):
         self.driver.close()
