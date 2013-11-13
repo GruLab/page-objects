@@ -10,7 +10,7 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
         self._visit('http://the-internet.herokuapp.com/login')
-        self.assertTrue(self.driver.find_element_by_css_selector(self.login_form))
+        self.assertTrue(self._find(self.login_form))
 
     def now(self):
         self._type(self.input_username, "username")
