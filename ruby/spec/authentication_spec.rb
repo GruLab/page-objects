@@ -1,4 +1,4 @@
-require_relative 'pages/login_page'
+require_relative '../pages/login_page'
 
 describe 'Authentication' do
 
