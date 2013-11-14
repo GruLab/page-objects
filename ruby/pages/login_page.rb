@@ -1,3 +1,5 @@
+require_relative 'base_page'
+
 module Pages
   class Login < BasePage
 
