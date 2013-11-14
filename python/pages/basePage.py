@@ -7,7 +7,7 @@ class BasePage(unittest.TestCase):
 
     def _element_present(self, locator):
         try:
-            self.driver.find_element_by_css_selector(locator)
+            self._find(locator)
         except NoSuchElementException, e: return False
         return True
 
