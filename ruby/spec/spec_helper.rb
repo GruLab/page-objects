@@ -1,6 +1,9 @@
+require 'selenium-webdriver'
+
 RSpec.configure do |config|
+
   config.before(:all) do
-    $base_url = 'http://the-internet.herokuap.com'
+    $base_url = 'http://the-internet.herokuapp.com'
   end
 
   config.before(:each) do
@@ -10,4 +13,5 @@ RSpec.configure do |config|
   config.after(:each) do
     @driver.quit
   end
+
 end

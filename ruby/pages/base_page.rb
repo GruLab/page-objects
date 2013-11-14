@@ -9,7 +9,7 @@ module Pages
 
     def element_present?(locator)
       begin
-        find(locator)
+        return true if find(locator)
       rescue NoSuchElementException
         false
       end
@@ -32,7 +32,7 @@ module Pages
     end
 
     def visit(url_path)
-      driver.get(base_url + url_path)
+      driver.get($base_url + url_path)
     end
 
   end

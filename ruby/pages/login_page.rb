@@ -9,12 +9,12 @@ module Pages
     NOTIFICATION_MESSAGE  = '#flash'
     SUCCESS_MESSAGE       = '#flash.success'
 
-    attr_writer :username, :password
+    attr_accessor :username, :password
 
     def initialize(driver)
       super
       visit('/login')
-      find(LOGIN_FORM).should be_true
+      element_present?(LOGIN_FORM).should == true
     end
 
     def now

@@ -1,3 +1,4 @@
+require 'spec_helper'
 require_relative '../pages/login_page'
 
 describe 'Authentication' do
@@ -8,7 +9,7 @@ describe 'Authentication' do
     login.username = 'username'
     login.password = 'password'
     login.now
-    login.success_message_present?.should be_true
+    login.success_message_present?.should be true
   end
 
 end
